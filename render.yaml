@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: escola-alunos
+    runtime: java
+    plan: free
+    buildCommand: bash render-build.sh
+    startCommand: java -Dserver.port=$PORT -jar target/escola-alunos-1.0.0.jar
+    envVars:
+      - key: JAVA_VERSION
+        value: "17"
