@@ -1,0 +1,44 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <label for="nome" class="block text-sm font-medium text-gray-700">Nome *</label>
+            <input type="text" id="nome" name="nome" th:value="${aluno.nome}" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+
+        <div>
+            <label for="matricula" class="block text-sm font-medium text-gray-700">Matrícula *</label>
+            <input type="text" id="matricula" name="matricula" th:value="${aluno.matricula}" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+            <input type="email" id="email" name="email" th:value="${aluno.email}" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+
+        <div>
+            <label for="dataNascimento" class="block text-sm font-medium text-gray-700">Data de Nascimento *</label>
+            <input type="date" id="dataNascimento" name="dataNascimento" th:value="${#temporals.format(aluno.dataNascimento, 'yyyy-MM-dd')}" required
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+
+        <div>
+            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" th:value="${aluno.telefone}"
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="(XX) 99999-9999">
+        </div>
+
+        <div class="md:col-span-2">
+            <label for="endereco" class="block text-sm font-medium text-gray-700">Endereço</label>
+            <input type="text" id="endereco" name="endereco" th:value="${aluno.endereco}"
+                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+    </div>
+
+    <div class="text-sm text-gray-500">
+        * Campos obrigatórios
+    </div>
+</div>
