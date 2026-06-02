@@ -58,3 +58,6 @@ out/
 *.zip
 *.tar.gz
 *.rar
+
+# Playwright MCP screenshots/snapshots
+.playwright-mcp/
