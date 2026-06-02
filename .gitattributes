@@ -1,0 +1,5 @@
+# Force LF line endings for shell scripts (Linux/Render compatibility)
+*.sh text eol=lf
+
+# Default: let git handle other files normally
+* text=auto
