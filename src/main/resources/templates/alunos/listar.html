@@ -68,11 +68,13 @@
                                     class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded transition">
                                     Editar
                                 </a>
-                                <a th:href="@{/alunos/deletar/{id}(id=${aluno.id})}" 
-                                    onclick="return confirm('Tem certeza?')"
-                                    class="inline-block bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition">
-                                    Deletar
-                                </a>
+                                <form th:action="@{/alunos/deletar/{id}(id=${aluno.id})}" method="POST" class="inline"
+                                      onsubmit="return confirm('Tem certeza que deseja remover este aluno?')">
+                                    <button type="submit"
+                                        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition">
+                                        Deletar
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         <tr th:if="${#lists.isEmpty(alunos)}">

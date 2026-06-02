@@ -51,7 +51,7 @@ public class AlunoController {
         return "redirect:/alunos";
     }
     
-    @GetMapping("/deletar/{id}")
+    @PostMapping("/deletar/{id}")
     public String deletar(@PathVariable Long id) {
         alunoService.deletar(id);
         return "redirect:/alunos";
