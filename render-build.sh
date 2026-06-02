@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Save the project root (where Render runs the build command from)
+RENDER_PROJECT_DIR="$(pwd)"
+
 # Install Java 17 if not available
 if ! command -v java &> /dev/null; then
   echo "Java not found, installing OpenJDK 17..."
@@ -32,9 +35,9 @@ export PATH="$PATH:/tmp/apache-maven-${MAVEN_VERSION}/bin"
 
 echo "Maven installed: $(mvn -version 2>&1 | head -1)"
 
-# Build the project
+# Build the project - use the script's original directory (repo root)
 echo "Building Spring Boot application..."
-cd /app
+cd "$RENDER_PROJECT_DIR"
 mvn clean install -DskipTests -q
 
 echo "Build complete!"
